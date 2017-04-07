@@ -1,4 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/Users/alexander.marold/git/acd-import-status'
 let g:netrw_dirhist_2='/Users/alexander.marold/git/history-exporter'
+let g:netrw_dirhist_3='/Users/alexander.marold/.vim'
+let g:netrw_dirhist_4='/Users/alexander.marold'
+let g:netrw_dirhist_5='/Users'
+let g:netrw_dirhist_6='/Users/alexander.marold'
+let g:netrw_dirhist_7='/Users/alexander.marold/.vim'
