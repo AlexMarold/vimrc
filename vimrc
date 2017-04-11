@@ -17,6 +17,15 @@ nnoremap J :j!<return>	" no whitespace while joining in general
 set colorcolumn=80
 set number
 set visualbell
+set noerrorbells
+set tabstop=2
+set shiftwidth=2
+set showmatch
+set ignorecase    " ignore case when searching
+set smartcase     " ignore case if search pattern is all lowercase,
+                    "    case-sensitive otherwise
+set smarttab      " insert tabs on the start of a line according to
+                    "    shiftwidth, not tabstop
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -77,7 +86,9 @@ let mapleader=" "
 map <leader>sv :source $MYVIMRC<CR>
 map <leader>ev :e $MYVIMRC<CR>
 let g:ctrlp_map = '<Leader>p'
-let g:ctrlp_cmd = 'CtrlPMixed'
+let g:ctrlp_cmd = 'CtrlP'
+map <leader>b :CtrlPBuffer<CR>
+map <leader>n :NERDTreeToggle<CR>
 
 " Test mappings
 nnoremap <silent> <leader>tn :TestNearest<CR>
@@ -91,6 +102,9 @@ call plug#begin('~/.vim/plugged')
 
 " Git Plugin "
 Plug 'tpope/vim-fugitive'
+
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 
 Plug 'kien/ctrlp.vim'
 
@@ -127,7 +141,7 @@ let g:airline_symbols.maxlinenr = ''
 
 if executable('ag')
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+  let g:ctrlp_user_command = 'ag --hidden %s -l --nocolor -g ""'
 
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
@@ -135,6 +149,9 @@ if executable('ag')
   " use ag for ack
   let g:ackprg = 'ag --nogroup --nocolor --column'
 endif
+
+" NERDTree should show hidden files
+let NERDTreeShowHidden=1
 
 " function to strip whitespaces
 fun! <SID>StripTrailingWhitespaces()
