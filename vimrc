@@ -13,13 +13,13 @@ set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
 set hls			" highlight all search results
 set nojoinspaces	" no extra whitespace after punctation
-nnoremap J :j!<return>	" no whitespace while joining in general
 set colorcolumn=80
 set number
 set visualbell
 set noerrorbells
 set tabstop=2
 set shiftwidth=2
+set expandtab
 set showmatch
 set ignorecase    " ignore case when searching
 set smartcase     " ignore case if search pattern is all lowercase,
@@ -141,7 +141,7 @@ let g:airline_symbols.maxlinenr = ''
 
 if executable('ag')
   " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag --hidden %s -l --nocolor -g ""'
+  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
   " ag is fast enough that CtrlP doesn't need to cache
   let g:ctrlp_use_caching = 0
