@@ -13,7 +13,7 @@ set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
 set hls			" highlight all search results
 set nojoinspaces	" no extra whitespace after punctation
-set colorcolumn=80
+set colorcolumn=81
 set number
 set visualbell
 set noerrorbells
@@ -34,9 +34,9 @@ map Q gq
 " so that you can undo CTRL-U after inserting a line break.
 inoremap <C-U> <C-G>u<C-U>
 
-" In many terminal emulators the mouse works just fine, thus enable it.
+" Disable mouse if it is available "
 if has('mouse')
-  set mouse=a
+  set mouse=
 endif
 
 " Switch syntax highlighting on, when the terminal has colors
@@ -79,6 +79,9 @@ augroup vimrcEx
 				\   exe "normal! g`\"" |
 				\ endif
 
+  autocmd FileType
+        \ ruby,vim,eruby,yml,sass,css,javascript,elixir,cucumber,haml,html
+        \ autocmd BufWritePre <buffer> %s/\s\+$//e
 augroup END
 
 " Special key mappings
@@ -89,6 +92,7 @@ let g:ctrlp_map = '<Leader>p'
 let g:ctrlp_cmd = 'CtrlP'
 map <leader>b :CtrlPBuffer<CR>
 map <leader>n :NERDTreeToggle<CR>
+nnoremap <silent> <leader>h :nohlsearch<CR>
 
 " Test mappings
 nnoremap <silent> <leader>tn :TestNearest<CR>
@@ -127,6 +131,8 @@ Plug 'tpope/vim-surround'
 
 Plug 'janko-m/vim-test'
 
+Plug 'scrooloose/nerdcommenter'
+
 " Initialize plugin system
 call plug#end()
 
@@ -153,10 +159,3 @@ endif
 " NERDTree should show hidden files
 let NERDTreeShowHidden=1
 
-" function to strip whitespaces
-fun! <SID>StripTrailingWhitespaces()
-  let l = line(".")
-  let c = col(".")
-  %s/\s\+$//e
-  call cursor(l, c)
-endfun
