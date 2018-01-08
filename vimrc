@@ -133,8 +133,18 @@ Plug 'janko-m/vim-test'
 
 Plug 'scrooloose/nerdcommenter'
 
+Plug 'sheerun/vim-polyglot'
+
+Plug 'othree/yajs.vim', { 'for': 'javascript' }
+
+Plug 'mxw/vim-jsx'
+
+Plug 'othree/javascript-libraries-syntax.vim'
+
 " Initialize plugin system
 call plug#end()
+
+let g:javascript_plugin_flow = 1
 
 " airline config
 set laststatus=2
