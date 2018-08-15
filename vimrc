@@ -123,6 +123,8 @@ Plug 'ervandew/supertab'
 
 Plug 'elixir-lang/vim-elixir'
 
+Plug 'mhinz/vim-mix-format'
+
 Plug 'tpope/vim-endwise'
 
 Plug 'vim-ruby/vim-ruby'
@@ -135,11 +137,11 @@ Plug 'scrooloose/nerdcommenter'
 
 Plug 'sheerun/vim-polyglot'
 
-Plug 'othree/yajs.vim', { 'for': 'javascript' }
+Plug 'https://github.com/rhysd/vim-crystal'
 
-Plug 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript'
 
-Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'fatih/vim-go'
 
 " Initialize plugin system
 call plug#end()
