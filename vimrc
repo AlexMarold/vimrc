@@ -125,6 +125,8 @@ Plug 'elixir-lang/vim-elixir'
 
 Plug 'mhinz/vim-mix-format'
 
+Plug 'slashmili/alchemist.vim'
+
 Plug 'tpope/vim-endwise'
 
 Plug 'vim-ruby/vim-ruby'
@@ -137,11 +139,7 @@ Plug 'scrooloose/nerdcommenter'
 
 Plug 'sheerun/vim-polyglot'
 
-Plug 'https://github.com/rhysd/vim-crystal'
-
 Plug 'pangloss/vim-javascript'
-
-Plug 'fatih/vim-go'
 
 " Initialize plugin system
 call plug#end()
